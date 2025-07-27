@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetXpress</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic reset and container styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-column {
+            flex-direction: column;
+        }
+        
+        .justify-between {
+            justify-content: space-between;
+        }
+        
+        .align-center {
+            align-items: center;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 10px 0;
+        }
+        
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .burger {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .app-features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 15px;
+            min-width: 200px;
+        }
+        
+        .feature i {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .feature h3 {
+            margin: 5px 0;
+        }
+        
+        .feature p {
+            font-size: 14px;
+            color: #ccc;
+        }
+        
+        .bonus {
+            background-color: #4a4ae0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .bonus span {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* Language dropdown */
+        .language-selector {
+            position: relative;
+        }
+        
+        .flag-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 100;
+            width: 200px;
+        }
+        
+        .flag-list ul {
+            list-style: none;
+        }
+        
+        .flag-list li {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .flag-list img {
+            margin-right: 10px;
+        }
+        
+        .language-selector:hover .flag-list {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-nav container">
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="right-nav flex">
+                <div class="login flex align-center">
+                    <i class="fas fa-qrcode"></i>
+                    <span>Log In</span>
+                </div>
+                <div class="register flex align-center">
+                    <i class="fas fa-edit"></i>
+                    <span>Registration</span>
+                </div>
+                <div class="settings flex align-center">
+                    <i class="fas fa-gear"></i>
+                </div>
+                <div class="time-zone flex align-center">
+                    <span>01:10</span>
+                </div>
+                <div class="language-selector flex align-center">
+                    <div class="flag">
+                        <img src="https://cdn-icons-png.flaticon.com/512/197/197484.png" alt="English Flag" width="30" height="20">
+                    </div>
+                    <span>EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="flag-list">
+                        <ul>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197564.png" alt="Ethiopia">
+                                <span>ET</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197560.png" alt="France">
+                                <span>FR</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197604.png" alt="Japan">
+                                <span>JP</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197582.png" alt="South Korea">
+                                <span>S.KR</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197419.png" alt="India">
+                                <span>IN</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197375.png" alt="China">
+                                <span>CN</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197452.png" alt="Thailand">
+                                <span>TH</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197503.png" alt="Croatia">
+                                <span>HR</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197507.png" alt="Australia">
+                                <span>AU</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197408.png" alt="Myanmar">
+                                <span>MM</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197573.png" alt="Argentina">
+                                <span>AR</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197386.png" alt="Brazil">
+                                <span>BR</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197571.png" alt="Germany">
+                                <span>DE</span>
+                            </li>
+                            <li>
+                                <img src="https://cdn-icons-png.flaticon.com/512/197/197626.png" alt="Italy">
+                                <span>IT</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="app-features container">
+            <div class="feature desktop">
+                <i class="fas fa-desktop"></i>
+                <div class="bet-app">
+                    <h3>BetXpress</h3>
+                    <h3>Bet App</h3>
+                    <p>This app will make pre-match predictions and help you place smarter bets.</p>
+                </div>
+            </div>
+            
+            <div class="feature mobile">
+                <i class="fas fa-mobile"></i>
+                <div class="smartphone">
+                    <h3>Smart Phone</h3>
+                    <h3>App</h3>
+                    <p>The BetXpress app makes betting simple and fun.</p>
+                </div>
+            </div>
+            
+            <div class="feature telegram">
+                <i class="fas fa-telegram"></i>
+                <div class="telegbox">
+                    <h3>Bets Via</h3>
+                    <h3>Telegram</h3>
+                    <p>Get betting tips and updates directly on Telegram.</p>
+                </div>
+            </div>
+            
+            <div class="feature payments">
+                <i class="fas fa-dollar"></i>
+            </div>
+            
+            <div class="feature bonus">
+                <span>4000EGP</span>
+                <i>BONUS</i>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
