@@ -41,12 +41,25 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #b388ff;
+    letter-spacing: 1px;
 }
 
 .burger {
     font-size: 1.6rem;
     cursor: pointer;
     color: #fff;
+    display: none;
 }
 
 .right-nav {
@@ -62,6 +75,13 @@ header {
     gap: 0.3rem;
     cursor: pointer;
     font-size: 0.95rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.right-nav > div:hover {
+    background: #2a2a4a;
 }
 
 .right-nav i {
@@ -112,11 +132,7 @@ header {
     object-fit: cover;
 }
 
-.language-selector:hover .flag-list {
-    display: block;
-}
-
-/* app-features */
+/* ===== APP FEATURES ===== */
 .app-features {
     display: flex;
     flex-wrap: wrap;
@@ -180,13 +196,6 @@ header {
     margin-top: 1.8rem;
 }
 
-@media (max-width: 800px) {
-    .betting-dashboard {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-
 /* ===== EVENTS ===== */
 .events-section h2 {
     font-size: 1.5rem;
@@ -235,7 +244,6 @@ header {
     font-size: 0.8rem;
 }
 
-/* odds groups */
 .odds-group {
     margin-top: 0.8rem;
     padding-top: 0.6rem;
@@ -477,4 +485,50 @@ header {
     color: var(--main-color);
     font-weight: 600;
     text-decoration: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+    .betting-dashboard {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .right-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .right-nav.active {
+        display: flex;
+    }
+
+    .right-nav > div {
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #2a2a4a;
+    }
+
+    .language-selector {
+        flex-wrap: wrap;
+    }
+
+    .flag-list {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
 }
