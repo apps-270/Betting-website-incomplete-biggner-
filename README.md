@@ -1,3 +1,3 @@
-# Betting-website-incomplete-biggner-
+# Betting-website-(Partial/Frontend)
 This is a very simple page made for a simple betting website. It is incomplete and many of you might not like it but its just a simple practise code and all of you are free to alter the code.
 feel free to take the code as a source code for your projects 
