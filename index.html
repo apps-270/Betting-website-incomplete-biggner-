@@ -4,15 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BetXpress</title>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- Google Font (Poppins) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-    <!-- External CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- ===== HEADER (as per original) ===== -->
+    <!-- HEADER -->
     <header>
         <div class="top-nav container">
             <div class="burger"><i class="fas fa-bars"></i></div>
@@ -47,7 +44,6 @@
             </div>
         </div>
 
-        <!-- app-features -->
         <div class="app-features container">
             <div class="feature desktop"><i class="fas fa-desktop"></i><div class="bet-app"><h3>BetXpress</h3><h3>Bet App</h3><p>Pre-match predictions</p></div></div>
             <div class="feature mobile"><i class="fas fa-mobile"></i><div class="smartphone"><h3>Smart Phone</h3><h3>App</h3><p>Simple & fun</p></div></div>
@@ -57,132 +53,132 @@
         </div>
     </header>
 
-    <!-- ===== MAIN CONTENT ===== -->
+    <!-- MAIN CONTENT -->
     <main class="container">
         <div class="betting-dashboard">
-            <!-- LEFT: EVENTS (many betting options) -->
+            <!-- LEFT: EVENTS -->
             <section class="events-section">
                 <h2><i class="fas fa-futbol" style="color: #b388ff; margin-right: 10px;"></i> Betting markets</h2>
 
-                <!-- Event 1: Football (3-way + over/under) -->
-                <div class="event-card" data-event="1">
+                <!-- Event 1: Football -->
+                <div class="event-card">
                     <div class="event-header"><span>⚽ Champions League</span><span>🏆 21:00</span></div>
                     <div class="event-teams"><span>Real Madrid</span> <span class="vs">vs</span> <span>Bayern Munich</span></div>
                     <div class="odds-group">
                         <span class="market-label">Match winner</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="1.85" data-label="Real Madrid" data-event-name="Real Madrid vs Bayern"><i class="fas fa-check-circle"></i> 1.85</button>
-                            <button class="odds-btn" data-odds="3.40" data-label="Draw" data-event-name="Real Madrid vs Bayern"><i class="fas fa-check-circle"></i> 3.40</button>
-                            <button class="odds-btn" data-odds="2.10" data-label="Bayern Munich" data-event-name="Real Madrid vs Bayern"><i class="fas fa-check-circle"></i> 2.10</button>
+                            <button class="odds-btn" data-odds="1.85" data-label="Real Madrid" data-event="Real Madrid vs Bayern">1.85</button>
+                            <button class="odds-btn" data-odds="3.40" data-label="Draw" data-event="Real Madrid vs Bayern">3.40</button>
+                            <button class="odds-btn" data-odds="2.10" data-label="Bayern Munich" data-event="Real Madrid vs Bayern">2.10</button>
                         </div>
                     </div>
                     <div class="odds-group">
                         <span class="market-label">Over / Under 2.5</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="1.90" data-label="Over 2.5" data-event-name="Real Madrid vs Bayern (O/U)"><i class="fas fa-check-circle"></i> 1.90</button>
-                            <button class="odds-btn" data-odds="1.95" data-label="Under 2.5" data-event-name="Real Madrid vs Bayern (O/U)"><i class="fas fa-check-circle"></i> 1.95</button>
+                            <button class="odds-btn" data-odds="1.90" data-label="Over 2.5" data-event="Real Madrid vs Bayern (O/U)">1.90</button>
+                            <button class="odds-btn" data-odds="1.95" data-label="Under 2.5" data-event="Real Madrid vs Bayern (O/U)">1.95</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Event 2: Basketball (moneyline + spread) -->
-                <div class="event-card" data-event="2">
+                <!-- Event 2: Basketball -->
+                <div class="event-card">
                     <div class="event-header"><span>🏀 NBA</span><span>⏰ 02:30</span></div>
                     <div class="event-teams"><span>Lakers</span> <span class="vs">vs</span> <span>Celtics</span></div>
                     <div class="odds-group">
                         <span class="market-label">Moneyline</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="1.95" data-label="Lakers" data-event-name="Lakers vs Celtics"><i class="fas fa-check-circle"></i> 1.95</button>
-                            <button class="odds-btn" data-odds="2.25" data-label="Celtics" data-event-name="Lakers vs Celtics"><i class="fas fa-check-circle"></i> 2.25</button>
+                            <button class="odds-btn" data-odds="1.95" data-label="Lakers" data-event="Lakers vs Celtics">1.95</button>
+                            <button class="odds-btn" data-odds="2.25" data-label="Celtics" data-event="Lakers vs Celtics">2.25</button>
                         </div>
                     </div>
                     <div class="odds-group">
                         <span class="market-label">Point spread (-5.5)</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="1.90" data-label="Lakers -5.5" data-event-name="Lakers vs Celtics (spread)"><i class="fas fa-check-circle"></i> 1.90</button>
-                            <button class="odds-btn" data-odds="1.92" data-label="Celtics +5.5" data-event-name="Lakers vs Celtics (spread)"><i class="fas fa-check-circle"></i> 1.92</button>
+                            <button class="odds-btn" data-odds="1.90" data-label="Lakers -5.5" data-event="Lakers vs Celtics (spread)">1.90</button>
+                            <button class="odds-btn" data-odds="1.92" data-label="Celtics +5.5" data-event="Lakers vs Celtics (spread)">1.92</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Event 3: Tennis (match winner + set betting) -->
-                <div class="event-card" data-event="3">
+                <!-- Event 3: Tennis -->
+                <div class="event-card">
                     <div class="event-header"><span>🎾 Tennis · Roland Garros</span><span>📅 14:00</span></div>
                     <div class="event-teams"><span>Djokovic</span> <span class="vs">vs</span> <span>Alcaraz</span></div>
                     <div class="odds-group">
                         <span class="market-label">Match winner</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="1.70" data-label="Djokovic" data-event-name="Djokovic vs Alcaraz"><i class="fas fa-check-circle"></i> 1.70</button>
-                            <button class="odds-btn" data-odds="2.20" data-label="Alcaraz" data-event-name="Djokovic vs Alcaraz"><i class="fas fa-check-circle"></i> 2.20</button>
+                            <button class="odds-btn" data-odds="1.70" data-label="Djokovic" data-event="Djokovic vs Alcaraz">1.70</button>
+                            <button class="odds-btn" data-odds="2.20" data-label="Alcaraz" data-event="Djokovic vs Alcaraz">2.20</button>
                         </div>
                     </div>
                     <div class="odds-group">
                         <span class="market-label">Set betting (3-0)</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="3.20" data-label="Djokovic 3-0" data-event-name="Djokovic vs Alcaraz (sets)"><i class="fas fa-check-circle"></i> 3.20</button>
-                            <button class="odds-btn" data-odds="3.80" data-label="Alcaraz 3-0" data-event-name="Djokovic vs Alcaraz (sets)"><i class="fas fa-check-circle"></i> 3.80</button>
+                            <button class="odds-btn" data-odds="3.20" data-label="Djokovic 3-0" data-event="Djokovic vs Alcaraz (sets)">3.20</button>
+                            <button class="odds-btn" data-odds="3.80" data-label="Alcaraz 3-0" data-event="Djokovic vs Alcaraz (sets)">3.80</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Event 4: Cricket (match winner + top batsman) -->
-                <div class="event-card" data-event="4">
+                <!-- Event 4: Cricket -->
+                <div class="event-card">
                     <div class="event-header"><span>🏏 Cricket · IPL</span><span>🔥 16:30</span></div>
                     <div class="event-teams"><span>Mumbai Indians</span> <span class="vs">vs</span> <span>Chennai Super Kings</span></div>
                     <div class="odds-group">
                         <span class="market-label">Match winner</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="1.80" data-label="Mumbai" data-event-name="MI vs CSK"><i class="fas fa-check-circle"></i> 1.80</button>
-                            <button class="odds-btn" data-odds="2.05" data-label="Chennai" data-event-name="MI vs CSK"><i class="fas fa-check-circle"></i> 2.05</button>
+                            <button class="odds-btn" data-odds="1.80" data-label="Mumbai" data-event="MI vs CSK">1.80</button>
+                            <button class="odds-btn" data-odds="2.05" data-label="Chennai" data-event="MI vs CSK">2.05</button>
                         </div>
                     </div>
                     <div class="odds-group">
                         <span class="market-label">Top batsman</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="3.50" data-label="Rohit Sharma" data-event-name="MI vs CSK (top bat)"><i class="fas fa-check-circle"></i> 3.50</button>
-                            <button class="odds-btn" data-odds="4.00" data-label="Virat Kohli" data-event-name="MI vs CSK (top bat)"><i class="fas fa-check-circle"></i> 4.00</button>
-                            <button class="odds-btn" data-odds="5.50" data-label="Suryakumar" data-event-name="MI vs CSK (top bat)"><i class="fas fa-check-circle"></i> 5.50</button>
+                            <button class="odds-btn" data-odds="3.50" data-label="Rohit Sharma" data-event="MI vs CSK (top bat)">3.50</button>
+                            <button class="odds-btn" data-odds="4.00" data-label="Virat Kohli" data-event="MI vs CSK (top bat)">4.00</button>
+                            <button class="odds-btn" data-odds="5.50" data-label="Suryakumar" data-event="MI vs CSK (top bat)">5.50</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Event 5: eSports (League of Legends) -->
-                <div class="event-card" data-event="5">
+                <!-- Event 5: eSports -->
+                <div class="event-card">
                     <div class="event-header"><span>🎮 eSports · Worlds</span><span>🎯 19:00</span></div>
                     <div class="event-teams"><span>T1</span> <span class="vs">vs</span> <span>Gen.G</span></div>
                     <div class="odds-group">
                         <span class="market-label">Match winner</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="1.75" data-label="T1" data-event-name="T1 vs Gen.G"><i class="fas fa-check-circle"></i> 1.75</button>
-                            <button class="odds-btn" data-odds="2.10" data-label="Gen.G" data-event-name="T1 vs Gen.G"><i class="fas fa-check-circle"></i> 2.10</button>
+                            <button class="odds-btn" data-odds="1.75" data-label="T1" data-event="T1 vs Gen.G">1.75</button>
+                            <button class="odds-btn" data-odds="2.10" data-label="Gen.G" data-event="T1 vs Gen.G">2.10</button>
                         </div>
                     </div>
                     <div class="odds-group">
                         <span class="market-label">Map 1 winner</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="1.85" data-label="T1 (Map1)" data-event-name="T1 vs Gen.G (Map1)"><i class="fas fa-check-circle"></i> 1.85</button>
-                            <button class="odds-btn" data-odds="2.00" data-label="Gen.G (Map1)" data-event-name="T1 vs Gen.G (Map1)"><i class="fas fa-check-circle"></i> 2.00</button>
+                            <button class="odds-btn" data-odds="1.85" data-label="T1 (Map1)" data-event="T1 vs Gen.G (Map1)">1.85</button>
+                            <button class="odds-btn" data-odds="2.00" data-label="Gen.G (Map1)" data-event="T1 vs Gen.G (Map1)">2.00</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Event 6: Boxing (winner + round) -->
-                <div class="event-card" data-event="6">
+                <!-- Event 6: Boxing -->
+                <div class="event-card">
                     <div class="event-header"><span>🥊 Boxing · Heavyweight</span><span>📆 23:00</span></div>
                     <div class="event-teams"><span>Joshua</span> <span class="vs">vs</span> <span>Fury</span></div>
                     <div class="odds-group">
                         <span class="market-label">Fight winner</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="2.20" data-label="Joshua" data-event-name="Joshua vs Fury"><i class="fas fa-check-circle"></i> 2.20</button>
-                            <button class="odds-btn" data-odds="1.75" data-label="Fury" data-event-name="Joshua vs Fury"><i class="fas fa-check-circle"></i> 1.75</button>
+                            <button class="odds-btn" data-odds="2.20" data-label="Joshua" data-event="Joshua vs Fury">2.20</button>
+                            <button class="odds-btn" data-odds="1.75" data-label="Fury" data-event="Joshua vs Fury">1.75</button>
                         </div>
                     </div>
                     <div class="odds-group">
                         <span class="market-label">Method of victory</span>
                         <div class="odds-row">
-                            <button class="odds-btn" data-odds="4.50" data-label="Joshua by KO" data-event-name="Joshua vs Fury (KO)"><i class="fas fa-check-circle"></i> 4.50</button>
-                            <button class="odds-btn" data-odds="5.00" data-label="Fury by KO" data-event-name="Joshua vs Fury (KO)"><i class="fas fa-check-circle"></i> 5.00</button>
-                            <button class="odds-btn" data-odds="3.20" data-label="Decision" data-event-name="Joshua vs Fury (decision)"><i class="fas fa-check-circle"></i> 3.20</button>
+                            <button class="odds-btn" data-odds="4.50" data-label="Joshua by KO" data-event="Joshua vs Fury (KO)">4.50</button>
+                            <button class="odds-btn" data-odds="5.00" data-label="Fury by KO" data-event="Joshua vs Fury (KO)">5.00</button>
+                            <button class="odds-btn" data-odds="3.20" data-label="Decision" data-event="Joshua vs Fury (decision)">3.20</button>
                         </div>
                     </div>
                 </div>
@@ -200,7 +196,7 @@
             </aside>
         </div>
 
-        <!-- ===== LOGIN / REGISTER FORM (as per original) ===== -->
+        <!-- LOGIN FORM -->
         <div class="form-container">
             <h2>🔐 Access your account</h2>
             <div class="form">
@@ -209,7 +205,7 @@
                 <label for="loginPass">Password</label>
                 <input type="password" id="loginPass" placeholder="••••••••" />
                 <a href="#">Forgot password?</a>
-                <input type="submit" value="Log in" />
+                <input type="submit" value="Log in" id="loginBtn" />
             </div>
             <div class="footer">
                 <span>New here? <a href="#">Create account</a></span>
@@ -251,7 +247,7 @@
                     div.className = 'slip-item';
                     div.innerHTML = `
                         <div class="slip-info">
-                            <strong>${sel.eventName}</strong><br />
+                            <strong>${sel.event}</strong><br />
                             <span style="color: #b0b0d0;">${sel.label}</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.6rem;">
@@ -272,18 +268,20 @@
                         const idx = parseInt(this.dataset.index, 10);
                         selections.splice(idx, 1);
                         renderSlip();
+                        // Remove selected class from all buttons
                         document.querySelectorAll('.odds-btn').forEach(b => b.classList.remove('selected'));
                     });
                 });
             }
 
-            function addSelection(eventName, label, odds) {
-                const exists = selections.some(s => s.eventName === eventName && s.label === label);
+            function addSelection(event, label, odds) {
+                // Check for duplicate
+                const exists = selections.some(s => s.event === event && s.label === label);
                 if (exists) {
                     alert('This selection is already in your slip.');
                     return false;
                 }
-                selections.push({ eventName, label, odds: parseFloat(odds) });
+                selections.push({ event, label, odds: parseFloat(odds) });
                 renderSlip();
                 return true;
             }
@@ -294,15 +292,15 @@
                     e.stopPropagation();
                     const odds = this.dataset.odds;
                     const label = this.dataset.label;
-                    const eventName = this.dataset.eventName || 'Match';
-                    const added = addSelection(eventName, label, odds);
+                    const event = this.dataset.event || 'Match';
+                    const added = addSelection(event, label, odds);
                     if (added) {
-                        this.style.backgroundColor = '#6400E4';
-                        setTimeout(() => { this.style.backgroundColor = ''; }, 200);
+                        this.classList.add('selected');
                     }
                 });
             });
 
+            // Place bet
             placeBtn.addEventListener('click', function() {
                 if (selections.length === 0) return;
                 const total = selections.reduce((acc, cur) => acc * parseFloat(cur.odds), 1);
@@ -310,6 +308,18 @@
                 selections = [];
                 renderSlip();
                 document.querySelectorAll('.odds-btn').forEach(b => b.classList.remove('selected'));
+            });
+
+            // Login button
+            document.getElementById('loginBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                const user = document.getElementById('loginUser').value.trim();
+                const pass = document.getElementById('loginPass').value.trim();
+                if (!user || !pass) {
+                    alert('Please enter both username and password.');
+                } else {
+                    alert(`Welcome back, ${user}! (demo)`);
+                }
             });
 
             renderSlip();
