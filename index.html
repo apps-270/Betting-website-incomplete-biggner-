@@ -9,15 +9,31 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- ===== HEADER (FIXED) ===== -->
     <header>
         <div class="top-nav container">
-            <div class="burger"><i class="fas fa-bars"></i></div>
+            <div class="burger" id="burgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <span class="logo-text">BetXpress</span>
+            </div>
             <div class="right-nav">
-                <div class="login"><i class="fas fa-qrcode"></i><span>Log In</span></div>
-                <div class="register"><i class="fas fa-edit"></i><span>Registration</span></div>
-                <div class="settings"><i class="fas fa-gear"></i></div>
-                <div class="time-zone"><span>01:10</span></div>
+                <div class="login" id="loginBtn">
+                    <i class="fas fa-qrcode"></i>
+                    <span>Log In</span>
+                </div>
+                <div class="register" id="registerBtn">
+                    <i class="fas fa-edit"></i>
+                    <span>Registration</span>
+                </div>
+                <div class="settings" id="settingsBtn">
+                    <i class="fas fa-gear"></i>
+                </div>
+                <div class="time-zone">
+                    <i class="fas fa-clock"></i>
+                    <span id="clockDisplay">01:10</span>
+                </div>
                 <div class="language-selector">
                     <img src="https://cdn-icons-png.flaticon.com/512/197/197484.png" alt="EN" width="24" height="16" />
                     <span>EN</span>
@@ -44,16 +60,43 @@
             </div>
         </div>
 
+        <!-- App Features -->
         <div class="app-features container">
-            <div class="feature desktop"><i class="fas fa-desktop"></i><div class="bet-app"><h3>BetXpress</h3><h3>Bet App</h3><p>Pre-match predictions</p></div></div>
-            <div class="feature mobile"><i class="fas fa-mobile"></i><div class="smartphone"><h3>Smart Phone</h3><h3>App</h3><p>Simple & fun</p></div></div>
-            <div class="feature telegram"><i class="fas fa-telegram"></i><div class="telegbox"><h3>Bets Via</h3><h3>Telegram</h3><p>Tips & updates</p></div></div>
-            <div class="feature payments"><i class="fas fa-dollar"></i></div>
-            <div class="feature bonus"><span>4000EGP</span><i>BONUS</i></div>
+            <div class="feature desktop">
+                <i class="fas fa-desktop"></i>
+                <div class="bet-app">
+                    <h3>BetXpress</h3>
+                    <h3>Bet App</h3>
+                    <p>Pre-match predictions</p>
+                </div>
+            </div>
+            <div class="feature mobile">
+                <i class="fas fa-mobile"></i>
+                <div class="smartphone">
+                    <h3>Smart Phone</h3>
+                    <h3>App</h3>
+                    <p>Simple & fun</p>
+                </div>
+            </div>
+            <div class="feature telegram">
+                <i class="fas fa-telegram"></i>
+                <div class="telegbox">
+                    <h3>Bets Via</h3>
+                    <h3>Telegram</h3>
+                    <p>Tips & updates</p>
+                </div>
+            </div>
+            <div class="feature payments">
+                <i class="fas fa-dollar"></i>
+            </div>
+            <div class="feature bonus">
+                <span>4000EGP</span>
+                <i>BONUS</i>
+            </div>
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
+    <!-- ===== MAIN CONTENT ===== -->
     <main class="container">
         <div class="betting-dashboard">
             <!-- LEFT: EVENTS -->
@@ -197,7 +240,7 @@
         </div>
 
         <!-- LOGIN FORM -->
-        <div class="form-container">
+        <div class="form-container" id="loginFormContainer" style="display: none;">
             <h2>🔐 Access your account</h2>
             <div class="form">
                 <label for="loginUser">Username or email</label>
@@ -205,15 +248,32 @@
                 <label for="loginPass">Password</label>
                 <input type="password" id="loginPass" placeholder="••••••••" />
                 <a href="#">Forgot password?</a>
-                <input type="submit" value="Log in" id="loginBtn" />
+                <input type="submit" value="Log in" id="loginSubmitBtn" />
             </div>
             <div class="footer">
-                <span>New here? <a href="#">Create account</a></span>
+                <span>New here? <a href="#" id="showRegister">Create account</a></span>
                 <div class="images">
                     <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="secure" />
                     <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="paypal" />
                     <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="visa" />
                 </div>
+            </div>
+        </div>
+
+        <!-- REGISTRATION FORM -->
+        <div class="form-container" id="registerFormContainer" style="display: none;">
+            <h2>📝 Create account</h2>
+            <div class="form">
+                <label for="regUser">Username</label>
+                <input type="text" id="regUser" placeholder="Choose username" />
+                <label for="regEmail">Email</label>
+                <input type="text" id="regEmail" placeholder="Enter email" />
+                <label for="regPass">Password</label>
+                <input type="password" id="regPass" placeholder="Create password" />
+                <input type="submit" value="Register" id="registerSubmitBtn" />
+            </div>
+            <div class="footer">
+                <span>Already have an account? <a href="#" id="showLogin">Log in</a></span>
             </div>
         </div>
     </main>
@@ -223,6 +283,115 @@
     </footer>
 
     <script>
+        // ===== HEADER FUNCTIONALITY =====
+        (function() {
+            // Clock
+            function updateClock() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                document.getElementById('clockDisplay').textContent = hours + ':' + minutes;
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+
+            // Burger menu toggle
+            const burger = document.getElementById('burgerMenu');
+            const rightNav = document.querySelector('.right-nav');
+            burger.addEventListener('click', function() {
+                rightNav.classList.toggle('active');
+            });
+
+            // Login/Register toggle
+            const loginBtn = document.getElementById('loginBtn');
+            const registerBtn = document.getElementById('registerBtn');
+            const loginForm = document.getElementById('loginFormContainer');
+            const registerForm = document.getElementById('registerFormContainer');
+            const showRegister = document.getElementById('showRegister');
+            const showLogin = document.getElementById('showLogin');
+
+            function showLoginForm() {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            }
+
+            function showRegisterForm() {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            }
+
+            loginBtn.addEventListener('click', function() {
+                showLoginForm();
+                // Scroll to form
+                loginForm.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            registerBtn.addEventListener('click', function() {
+                showRegisterForm();
+                registerForm.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            showRegister.addEventListener('click', function(e) {
+                e.preventDefault();
+                showRegisterForm();
+            });
+
+            showLogin.addEventListener('click', function(e) {
+                e.preventDefault();
+                showLoginForm();
+            });
+
+            // Login submit
+            document.getElementById('loginSubmitBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                const user = document.getElementById('loginUser').value.trim();
+                const pass = document.getElementById('loginPass').value.trim();
+                if (!user || !pass) {
+                    alert('Please enter both username and password.');
+                } else {
+                    alert(`✅ Welcome back, ${user}! (demo)`);
+                    document.getElementById('loginUser').value = '';
+                    document.getElementById('loginPass').value = '';
+                }
+            });
+
+            // Register submit
+            document.getElementById('registerSubmitBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                const user = document.getElementById('regUser').value.trim();
+                const email = document.getElementById('regEmail').value.trim();
+                const pass = document.getElementById('regPass').value.trim();
+                if (!user || !email || !pass) {
+                    alert('Please fill in all fields.');
+                } else {
+                    alert(`✅ Account created for ${user}! (demo)`);
+                    document.getElementById('regUser').value = '';
+                    document.getElementById('regEmail').value = '';
+                    document.getElementById('regPass').value = '';
+                    showLoginForm();
+                }
+            });
+
+            // Settings button
+            document.getElementById('settingsBtn').addEventListener('click', function() {
+                alert('⚙️ Settings panel (demo)');
+            });
+
+            // Language selector click (for mobile)
+            document.querySelector('.language-selector').addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.querySelector('.flag-list').style.display = 
+                    this.querySelector('.flag-list').style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Close language dropdown when clicking outside
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.flag-list').forEach(el => {
+                    el.style.display = 'none';
+                });
+            });
+        })();
+
         // ===== BET SLIP LOGIC =====
         (function() {
             const slipItems = document.getElementById('slipItems');
@@ -268,14 +437,12 @@
                         const idx = parseInt(this.dataset.index, 10);
                         selections.splice(idx, 1);
                         renderSlip();
-                        // Remove selected class from all buttons
                         document.querySelectorAll('.odds-btn').forEach(b => b.classList.remove('selected'));
                     });
                 });
             }
 
             function addSelection(event, label, odds) {
-                // Check for duplicate
                 const exists = selections.some(s => s.event === event && s.label === label);
                 if (exists) {
                     alert('This selection is already in your slip.');
@@ -286,7 +453,6 @@
                 return true;
             }
 
-            // Attach to all odds buttons
             document.querySelectorAll('.odds-btn').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -300,7 +466,6 @@
                 });
             });
 
-            // Place bet
             placeBtn.addEventListener('click', function() {
                 if (selections.length === 0) return;
                 const total = selections.reduce((acc, cur) => acc * parseFloat(cur.odds), 1);
@@ -308,18 +473,6 @@
                 selections = [];
                 renderSlip();
                 document.querySelectorAll('.odds-btn').forEach(b => b.classList.remove('selected'));
-            });
-
-            // Login button
-            document.getElementById('loginBtn').addEventListener('click', function(e) {
-                e.preventDefault();
-                const user = document.getElementById('loginUser').value.trim();
-                const pass = document.getElementById('loginPass').value.trim();
-                if (!user || !pass) {
-                    alert('Please enter both username and password.');
-                } else {
-                    alert(`Welcome back, ${user}! (demo)`);
-                }
             });
 
             renderSlip();
