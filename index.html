@@ -1,263 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BetXpress</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Basic reset and container styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .flex {
-            display: flex;
-        }
-        
-        .flex-column {
-            flex-direction: column;
-        }
-        
-        .justify-between {
-            justify-content: space-between;
-        }
-        
-        .align-center {
-            align-items: center;
-        }
-        
-        /* Header styles */
-        header {
-            background-color: #1a1a2e;
-            color: white;
-            padding: 10px 0;
-        }
-        
-        .top-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .burger {
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        .app-features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px 0;
-        }
-        
-        .feature {
-            text-align: center;
-            padding: 15px;
-            min-width: 200px;
-        }
-        
-        .feature i {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        
-        .feature h3 {
-            margin: 5px 0;
-        }
-        
-        .feature p {
-            font-size: 14px;
-            color: #ccc;
-        }
-        
-        .bonus {
-            background-color: #4a4ae0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        
-        .bonus span {
-            font-weight: bold;
-            font-size: 18px;
-        }
-        
-        /* Language dropdown */
-        .language-selector {
-            position: relative;
-        }
-        
-        .flag-list {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            color: black;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 100;
-            width: 200px;
-        }
-        
-        .flag-list ul {
-            list-style: none;
-        }
-        
-        .flag-list li {
-            display: flex;
-            align-items: center;
-            padding: 5px 0;
-        }
-        
-        .flag-list img {
-            margin-right: 10px;
-        }
-        
-        .language-selector:hover .flag-list {
-            display: block;
-        }
-    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Font (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <!-- ===== HEADER (as per original) ===== -->
     <header>
         <div class="top-nav container">
-            <div class="burger">
-                <i class="fas fa-bars"></i>
-            </div>
-            <div class="right-nav flex">
-                <div class="login flex align-center">
-                    <i class="fas fa-qrcode"></i>
-                    <span>Log In</span>
-                </div>
-                <div class="register flex align-center">
-                    <i class="fas fa-edit"></i>
-                    <span>Registration</span>
-                </div>
-                <div class="settings flex align-center">
-                    <i class="fas fa-gear"></i>
-                </div>
-                <div class="time-zone flex align-center">
-                    <span>01:10</span>
-                </div>
-                <div class="language-selector flex align-center">
-                    <div class="flag">
-                        <img src="https://cdn-icons-png.flaticon.com/512/197/197484.png" alt="English Flag" width="30" height="20">
-                    </div>
+            <div class="burger"><i class="fas fa-bars"></i></div>
+            <div class="right-nav">
+                <div class="login"><i class="fas fa-qrcode"></i><span>Log In</span></div>
+                <div class="register"><i class="fas fa-edit"></i><span>Registration</span></div>
+                <div class="settings"><i class="fas fa-gear"></i></div>
+                <div class="time-zone"><span>01:10</span></div>
+                <div class="language-selector">
+                    <img src="https://cdn-icons-png.flaticon.com/512/197/197484.png" alt="EN" width="24" height="16" />
                     <span>EN</span>
                     <i class="fas fa-chevron-down"></i>
                     <div class="flag-list">
                         <ul>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197564.png" alt="Ethiopia">
-                                <span>ET</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197560.png" alt="France">
-                                <span>FR</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197604.png" alt="Japan">
-                                <span>JP</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197582.png" alt="South Korea">
-                                <span>S.KR</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197419.png" alt="India">
-                                <span>IN</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197375.png" alt="China">
-                                <span>CN</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197452.png" alt="Thailand">
-                                <span>TH</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197503.png" alt="Croatia">
-                                <span>HR</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197507.png" alt="Australia">
-                                <span>AU</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197408.png" alt="Myanmar">
-                                <span>MM</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197573.png" alt="Argentina">
-                                <span>AR</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197386.png" alt="Brazil">
-                                <span>BR</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197571.png" alt="Germany">
-                                <span>DE</span>
-                            </li>
-                            <li>
-                                <img src="https://cdn-icons-png.flaticon.com/512/197/197626.png" alt="Italy">
-                                <span>IT</span>
-                            </li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197564.png" alt="ET" /><span>ET</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197560.png" alt="FR" /><span>FR</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197604.png" alt="JP" /><span>JP</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197582.png" alt="KR" /><span>S.KR</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197419.png" alt="IN" /><span>IN</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197375.png" alt="CN" /><span>CN</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197452.png" alt="TH" /><span>TH</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197503.png" alt="HR" /><span>HR</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197507.png" alt="AU" /><span>AU</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197408.png" alt="MM" /><span>MM</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197573.png" alt="AR" /><span>AR</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197386.png" alt="BR" /><span>BR</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197571.png" alt="DE" /><span>DE</span></li>
+                            <li><img src="https://cdn-icons-png.flaticon.com/512/197/197626.png" alt="IT" /><span>IT</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        
+
+        <!-- app-features -->
         <div class="app-features container">
-            <div class="feature desktop">
-                <i class="fas fa-desktop"></i>
-                <div class="bet-app">
-                    <h3>BetXpress</h3>
-                    <h3>Bet App</h3>
-                    <p>This app will make pre-match predictions and help you place smarter bets.</p>
-                </div>
-            </div>
-            
-            <div class="feature mobile">
-                <i class="fas fa-mobile"></i>
-                <div class="smartphone">
-                    <h3>Smart Phone</h3>
-                    <h3>App</h3>
-                    <p>The BetXpress app makes betting simple and fun.</p>
-                </div>
-            </div>
-            
-            <div class="feature telegram">
-                <i class="fas fa-telegram"></i>
-                <div class="telegbox">
-                    <h3>Bets Via</h3>
-                    <h3>Telegram</h3>
-                    <p>Get betting tips and updates directly on Telegram.</p>
-                </div>
-            </div>
-            
-            <div class="feature payments">
-                <i class="fas fa-dollar"></i>
-            </div>
-            
-            <div class="feature bonus">
-                <span>4000EGP</span>
-                <i>BONUS</i>
-            </div>
+            <div class="feature desktop"><i class="fas fa-desktop"></i><div class="bet-app"><h3>BetXpress</h3><h3>Bet App</h3><p>Pre-match predictions</p></div></div>
+            <div class="feature mobile"><i class="fas fa-mobile"></i><div class="smartphone"><h3>Smart Phone</h3><h3>App</h3><p>Simple & fun</p></div></div>
+            <div class="feature telegram"><i class="fas fa-telegram"></i><div class="telegbox"><h3>Bets Via</h3><h3>Telegram</h3><p>Tips & updates</p></div></div>
+            <div class="feature payments"><i class="fas fa-dollar"></i></div>
+            <div class="feature bonus"><span>4000EGP</span><i>BONUS</i></div>
         </div>
     </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container">
+        <div class="betting-dashboard">
+            <!-- LEFT: EVENTS (many betting options) -->
+            <section class="events-section">
+                <h2><i class="fas fa-futbol" style="color: #b388ff; margin-right: 10px;"></i> Betting markets</h2>
+
+                <!-- Event 1: Football (3-way + over/under) -->
+                <div class="event-card" data-event="1">
+                    <div class="event-header"><span>⚽ Champions League</span><span>🏆 21:00</span></div>
+                    <div class="event-teams"><span>Real Madrid</span> <span class="vs">vs</span> <span>Bayern Munich</span></div>
+                    <div class="odds-group">
+                        <span class="market-label">Match winner</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="1.85" data-label="Real Madrid" data-event-name="Real Madrid vs Bayern"><i class="fas fa-check-circle"></i> 1.85</button>
+                            <button class="odds-btn" data-odds="3.40" data-label="Draw" data-event-name="Real Madrid vs Bayern"><i class="fas fa-check-circle"></i> 3.40</button>
+                            <button class="odds-btn" data-odds="2.10" data-label="Bayern Munich" data-event-name="Real Madrid vs Bayern"><i class="fas fa-check-circle"></i> 2.10</button>
+                        </div>
+                    </div>
+                    <div class="odds-group">
+                        <span class="market-label">Over / Under 2.5</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="1.90" data-label="Over 2.5" data-event-name="Real Madrid vs Bayern (O/U)"><i class="fas fa-check-circle"></i> 1.90</button>
+                            <button class="odds-btn" data-odds="1.95" data-label="Under 2.5" data-event-name="Real Madrid vs Bayern (O/U)"><i class="fas fa-check-circle"></i> 1.95</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: Basketball (moneyline + spread) -->
+                <div class="event-card" data-event="2">
+                    <div class="event-header"><span>🏀 NBA</span><span>⏰ 02:30</span></div>
+                    <div class="event-teams"><span>Lakers</span> <span class="vs">vs</span> <span>Celtics</span></div>
+                    <div class="odds-group">
+                        <span class="market-label">Moneyline</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="1.95" data-label="Lakers" data-event-name="Lakers vs Celtics"><i class="fas fa-check-circle"></i> 1.95</button>
+                            <button class="odds-btn" data-odds="2.25" data-label="Celtics" data-event-name="Lakers vs Celtics"><i class="fas fa-check-circle"></i> 2.25</button>
+                        </div>
+                    </div>
+                    <div class="odds-group">
+                        <span class="market-label">Point spread (-5.5)</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="1.90" data-label="Lakers -5.5" data-event-name="Lakers vs Celtics (spread)"><i class="fas fa-check-circle"></i> 1.90</button>
+                            <button class="odds-btn" data-odds="1.92" data-label="Celtics +5.5" data-event-name="Lakers vs Celtics (spread)"><i class="fas fa-check-circle"></i> 1.92</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3: Tennis (match winner + set betting) -->
+                <div class="event-card" data-event="3">
+                    <div class="event-header"><span>🎾 Tennis · Roland Garros</span><span>📅 14:00</span></div>
+                    <div class="event-teams"><span>Djokovic</span> <span class="vs">vs</span> <span>Alcaraz</span></div>
+                    <div class="odds-group">
+                        <span class="market-label">Match winner</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="1.70" data-label="Djokovic" data-event-name="Djokovic vs Alcaraz"><i class="fas fa-check-circle"></i> 1.70</button>
+                            <button class="odds-btn" data-odds="2.20" data-label="Alcaraz" data-event-name="Djokovic vs Alcaraz"><i class="fas fa-check-circle"></i> 2.20</button>
+                        </div>
+                    </div>
+                    <div class="odds-group">
+                        <span class="market-label">Set betting (3-0)</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="3.20" data-label="Djokovic 3-0" data-event-name="Djokovic vs Alcaraz (sets)"><i class="fas fa-check-circle"></i> 3.20</button>
+                            <button class="odds-btn" data-odds="3.80" data-label="Alcaraz 3-0" data-event-name="Djokovic vs Alcaraz (sets)"><i class="fas fa-check-circle"></i> 3.80</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4: Cricket (match winner + top batsman) -->
+                <div class="event-card" data-event="4">
+                    <div class="event-header"><span>🏏 Cricket · IPL</span><span>🔥 16:30</span></div>
+                    <div class="event-teams"><span>Mumbai Indians</span> <span class="vs">vs</span> <span>Chennai Super Kings</span></div>
+                    <div class="odds-group">
+                        <span class="market-label">Match winner</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="1.80" data-label="Mumbai" data-event-name="MI vs CSK"><i class="fas fa-check-circle"></i> 1.80</button>
+                            <button class="odds-btn" data-odds="2.05" data-label="Chennai" data-event-name="MI vs CSK"><i class="fas fa-check-circle"></i> 2.05</button>
+                        </div>
+                    </div>
+                    <div class="odds-group">
+                        <span class="market-label">Top batsman</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="3.50" data-label="Rohit Sharma" data-event-name="MI vs CSK (top bat)"><i class="fas fa-check-circle"></i> 3.50</button>
+                            <button class="odds-btn" data-odds="4.00" data-label="Virat Kohli" data-event-name="MI vs CSK (top bat)"><i class="fas fa-check-circle"></i> 4.00</button>
+                            <button class="odds-btn" data-odds="5.50" data-label="Suryakumar" data-event-name="MI vs CSK (top bat)"><i class="fas fa-check-circle"></i> 5.50</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5: eSports (League of Legends) -->
+                <div class="event-card" data-event="5">
+                    <div class="event-header"><span>🎮 eSports · Worlds</span><span>🎯 19:00</span></div>
+                    <div class="event-teams"><span>T1</span> <span class="vs">vs</span> <span>Gen.G</span></div>
+                    <div class="odds-group">
+                        <span class="market-label">Match winner</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="1.75" data-label="T1" data-event-name="T1 vs Gen.G"><i class="fas fa-check-circle"></i> 1.75</button>
+                            <button class="odds-btn" data-odds="2.10" data-label="Gen.G" data-event-name="T1 vs Gen.G"><i class="fas fa-check-circle"></i> 2.10</button>
+                        </div>
+                    </div>
+                    <div class="odds-group">
+                        <span class="market-label">Map 1 winner</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="1.85" data-label="T1 (Map1)" data-event-name="T1 vs Gen.G (Map1)"><i class="fas fa-check-circle"></i> 1.85</button>
+                            <button class="odds-btn" data-odds="2.00" data-label="Gen.G (Map1)" data-event-name="T1 vs Gen.G (Map1)"><i class="fas fa-check-circle"></i> 2.00</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 6: Boxing (winner + round) -->
+                <div class="event-card" data-event="6">
+                    <div class="event-header"><span>🥊 Boxing · Heavyweight</span><span>📆 23:00</span></div>
+                    <div class="event-teams"><span>Joshua</span> <span class="vs">vs</span> <span>Fury</span></div>
+                    <div class="odds-group">
+                        <span class="market-label">Fight winner</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="2.20" data-label="Joshua" data-event-name="Joshua vs Fury"><i class="fas fa-check-circle"></i> 2.20</button>
+                            <button class="odds-btn" data-odds="1.75" data-label="Fury" data-event-name="Joshua vs Fury"><i class="fas fa-check-circle"></i> 1.75</button>
+                        </div>
+                    </div>
+                    <div class="odds-group">
+                        <span class="market-label">Method of victory</span>
+                        <div class="odds-row">
+                            <button class="odds-btn" data-odds="4.50" data-label="Joshua by KO" data-event-name="Joshua vs Fury (KO)"><i class="fas fa-check-circle"></i> 4.50</button>
+                            <button class="odds-btn" data-odds="5.00" data-label="Fury by KO" data-event-name="Joshua vs Fury (KO)"><i class="fas fa-check-circle"></i> 5.00</button>
+                            <button class="odds-btn" data-odds="3.20" data-label="Decision" data-event-name="Joshua vs Fury (decision)"><i class="fas fa-check-circle"></i> 3.20</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT: BET SLIP -->
+            <aside class="bet-slip" id="betSlip">
+                <h3>📋 Bet slip <span id="slipCount">0</span></h3>
+                <div id="slipItems">
+                    <div class="slip-empty">No selections yet. <br /> <i class="fas fa-hand-pointer" style="color: #b388ff;"></i> Click odds to add</div>
+                </div>
+                <div class="slip-total"><span>Total odds</span> <span id="totalOdds">—</span></div>
+                <button class="place-bet-btn" id="placeBetBtn" disabled>Place bet</button>
+                <div style="font-size: 0.7rem; color: #6a6a8a; margin-top: 0.5rem;">* minimum 1 selection</div>
+            </aside>
+        </div>
+
+        <!-- ===== LOGIN / REGISTER FORM (as per original) ===== -->
+        <div class="form-container">
+            <h2>🔐 Access your account</h2>
+            <div class="form">
+                <label for="loginUser">Username or email</label>
+                <input type="text" id="loginUser" placeholder="Enter username" />
+                <label for="loginPass">Password</label>
+                <input type="password" id="loginPass" placeholder="••••••••" />
+                <a href="#">Forgot password?</a>
+                <input type="submit" value="Log in" />
+            </div>
+            <div class="footer">
+                <span>New here? <a href="#">Create account</a></span>
+                <div class="images">
+                    <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="secure" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="paypal" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="visa" />
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 1.5rem 0; border-top: 1px solid #2a2a44; margin-top: 1rem; font-size: 0.8rem; opacity: 0.6;">
+        <div class="container">BetXpress © 2026 — 18+ | Gamble responsibly</div>
+    </footer>
+
+    <script>
+        // ===== BET SLIP LOGIC =====
+        (function() {
+            const slipItems = document.getElementById('slipItems');
+            const slipCount = document.getElementById('slipCount');
+            const totalOddsEl = document.getElementById('totalOdds');
+            const placeBtn = document.getElementById('placeBetBtn');
+
+            let selections = [];
+
+            function renderSlip() {
+                slipItems.innerHTML = '';
+                if (selections.length === 0) {
+                    slipItems.innerHTML = '<div class="slip-empty">No selections yet. <br /> <i class="fas fa-hand-pointer" style="color: #b388ff;"></i> Click odds to add</div>';
+                    slipCount.textContent = '0';
+                    totalOddsEl.textContent = '—';
+                    placeBtn.disabled = true;
+                    return;
+                }
+
+                selections.forEach((sel, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'slip-item';
+                    div.innerHTML = `
+                        <div class="slip-info">
+                            <strong>${sel.eventName}</strong><br />
+                            <span style="color: #b0b0d0;">${sel.label}</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                            <span class="slip-odds">${sel.odds}</span>
+                            <button class="remove-btn" data-index="${index}"><i class="fas fa-times"></i></button>
+                        </div>
+                    `;
+                    slipItems.appendChild(div);
+                });
+
+                slipCount.textContent = selections.length;
+                const total = selections.reduce((acc, cur) => acc * parseFloat(cur.odds), 1);
+                totalOddsEl.textContent = total.toFixed(2);
+                placeBtn.disabled = false;
+
+                document.querySelectorAll('.remove-btn').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        const idx = parseInt(this.dataset.index, 10);
+                        selections.splice(idx, 1);
+                        renderSlip();
+                        document.querySelectorAll('.odds-btn').forEach(b => b.classList.remove('selected'));
+                    });
+                });
+            }
+
+            function addSelection(eventName, label, odds) {
+                const exists = selections.some(s => s.eventName === eventName && s.label === label);
+                if (exists) {
+                    alert('This selection is already in your slip.');
+                    return false;
+                }
+                selections.push({ eventName, label, odds: parseFloat(odds) });
+                renderSlip();
+                return true;
+            }
+
+            // Attach to all odds buttons
+            document.querySelectorAll('.odds-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const odds = this.dataset.odds;
+                    const label = this.dataset.label;
+                    const eventName = this.dataset.eventName || 'Match';
+                    const added = addSelection(eventName, label, odds);
+                    if (added) {
+                        this.style.backgroundColor = '#6400E4';
+                        setTimeout(() => { this.style.backgroundColor = ''; }, 200);
+                    }
+                });
+            });
+
+            placeBtn.addEventListener('click', function() {
+                if (selections.length === 0) return;
+                const total = selections.reduce((acc, cur) => acc * parseFloat(cur.odds), 1);
+                alert(`✅ Bet placed!\nSelections: ${selections.length}\nTotal odds: ${total.toFixed(2)}\n( demo )`);
+                selections = [];
+                renderSlip();
+                document.querySelectorAll('.odds-btn').forEach(b => b.classList.remove('selected'));
+            });
+
+            renderSlip();
+        })();
+    </script>
 </body>
 </html>
