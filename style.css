@@ -1,93 +1,487 @@
-*{
-    margin:0;
-    padding:0;
+/* ===== style.css ===== */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --main-color: #6400E4;
     --box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.34);
-    --hover-shadow: 0px 0px 4px 4px rgba(3,3,3,0.561);
-    --nav-shadow: 0px 0px 10px 0px rgba (0, 0, 0, 0.10);
-    --light-black: #141c3a;  
+    --hover-shadow: 0px 0px 4px 4px rgba(3, 3, 3, 0.561);
+    --nav-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+    --light-black: #141c3a;
+}
 
-}
-body{
+body {
     font-family: 'Poppins', sans-serif;
-    background-color: black;
+    background-color: #0c0c1a;
     color: white;
-}
-.container{
-    width: 28%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.form{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
-form label{
-    margin:5px 0;
-}
-form input[type="text"], form input[type="password"] {
-    hight: 40px;
-    margin: 5px 0;
-    border: 0.5px #b8b8b85d;
-    border-radius: 3px;
-    padding: 0 15px;
-    font: 20px;
-    font-family: 'Poppins', sans-serif;
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
 }
-form a{
-    margin: 10;
-    text-decoration: none;
-    color: var(--main-color);
-    font-weight: bold;
+
+/* ===== HEADER ===== */
+header {
+    background-color: #1a1a2e;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #2f2f4a;
 }
-form input[type="submit"]{
-    background-color: var(--main-color);
-    height: 50px;
-    font-size: 20px;
-    font family: 'Poppins', sans-serif;
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.burger {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.right-nav > div {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.right-nav i {
+    font-size: 1.1rem;
+}
+
+.language-selector {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.flag-list {
+    display: none;
+    position: absolute;
+    top: 140%;
+    right: 0;
+    background: #252540;
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    width: 170px;
+    z-index: 200;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.flag-list ul {
+    list-style: none;
+}
+
+.flag-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #3c3c5a;
+}
+
+.flag-list li:last-child {
+    border-bottom: none;
+}
+
+.flag-list img {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+}
+
+.language-selector:hover .flag-list {
+    display: block;
+}
+
+/* app-features */
+.app-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem 0.5rem;
+    padding: 0.8rem 0 0.2rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #22223b;
+    padding: 0.4rem 1rem 0.4rem 0.6rem;
+    border-radius: 40px;
+    border: 1px solid #3c3c5a;
+}
+
+.feature i {
+    font-size: 1.8rem;
+    color: #b388ff;
+}
+
+.feature .bet-app h3,
+.feature .smartphone h3,
+.feature .telegbox h3 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.feature .bet-app p,
+.feature .smartphone p,
+.feature .telegbox p {
+    font-size: 0.6rem;
+    color: #aaa;
+}
+
+.bonus {
+    background: #4a4ae0;
+    padding: 0.2rem 1.2rem;
+    border-radius: 40px;
+}
+
+.bonus span {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.bonus i {
+    font-style: normal;
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.betting-dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 1.8rem;
+}
+
+@media (max-width: 800px) {
+    .betting-dashboard {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* ===== EVENTS ===== */
+.events-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    border-left: 5px solid var(--main-color);
+    padding-left: 1rem;
+}
+
+.event-card {
+    background: #18182e;
+    border-radius: 16px;
+    padding: 1.2rem 1rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #2d2d4a;
+    transition: 0.2s;
+}
+
+.event-card:hover {
+    border-color: #6a3bdb;
+    background: #1f1f38;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #b7b7e0;
+    margin-bottom: 0.8rem;
+}
+
+.event-teams {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+}
+
+.event-teams span {
+    font-weight: 600;
+}
+
+.event-teams .vs {
+    color: #7a7a9e;
+    font-size: 0.8rem;
+}
+
+/* odds groups */
+.odds-group {
+    margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid #2a2a48;
+}
+
+.market-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #8a8ab0;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.odds-row {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.odds-btn {
+    background: #272746;
     border: none;
     color: white;
-    border-radius: 3px;
-    box-shadow: var(--box-shadow);
-    cursor:pointer;
-    transition: all 0.3s ease-in-out;
-}
-form input[type="submit"]:hover{
-    box-shadow: var(--hover-shadow);
-    transform: translate(y-3px);
-}
-.footer{
-    font-size: 16px;
-    opacity: 0.9;
-}
-.footer .images{
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
     display: flex;
-    height: 10vh;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 15px;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: 0.15s;
+    border: 1px solid transparent;
 }
-.footer .images img{
-    width: 50px;
+
+.odds-btn i {
+    font-size: 0.8rem;
+    color: #b388ff;
+}
+
+.odds-btn:hover {
+    background: #3a3a60;
+    border-color: #b388ff;
+    transform: scale(1.02);
+}
+
+.odds-btn.selected {
+    background: var(--main-color);
+    border-color: #b388ff;
+}
+
+/* ===== BET SLIP ===== */
+.bet-slip {
+    background: #14142a;
+    border-radius: 20px;
+    padding: 1.5rem 1rem;
+    border: 1px solid #2f2f50;
+    height: fit-content;
+    position: sticky;
+    top: 1rem;
+}
+
+.bet-slip h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slip-empty {
+    text-align: center;
+    color: #8888aa;
+    padding: 1.5rem 0;
+}
+
+.slip-item {
+    background: #1f1f3a;
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 3px solid var(--main-color);
+}
+
+.slip-item .slip-info {
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.slip-item .slip-odds {
+    font-weight: 700;
+    color: #b388ff;
+}
+
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: #ff5e7a;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 0.3rem;
+}
+
+.slip-total {
+    margin-top: 1.2rem;
+    border-top: 1px solid #3a3a5a;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.place-bet-btn {
+    width: 100%;
+    background: var(--main-color);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 60px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: var(--box-shadow);
+}
+
+.place-bet-btn:hover {
+    background: #7a22f0;
+    transform: scale(1.01);
+}
+
+.place-bet-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== FORM (from original) ===== */
+.form-container {
+    margin: 2rem 0 1rem;
+    background: #12122a;
+    padding: 1.8rem 1.5rem;
+    border-radius: 28px;
+    border: 1px solid #2d2d4a;
+}
+
+.form-container h2 {
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+    height: 44px;
+    padding: 0 1rem;
+    border-radius: 30px;
+    border: 1px solid #3a3a5a;
+    background: #1b1b33;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+}
+
+.form input[type="text"]:focus,
+.form input[type="password"]:focus {
+    outline: 2px solid var(--main-color);
+    border-color: transparent;
+}
+
+.form a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form input[type="submit"] {
+    background: var(--main-color);
     height: 50px;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    color: white;
+    border-radius: 60px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+.form input[type="submit"]:hover {
+    box-shadow: var(--hover-shadow);
+    transform: translateY(-2px);
+}
+
+.footer {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .images {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.footer .images img {
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     box-shadow: var(--nav-shadow);
-    transition: all 0.3s ease-in-out;
+    transition: 0.2s;
+    border: 1px solid #3a3a5a;
 }
-.footer .images img:hover{
+
+.footer .images img:hover {
     box-shadow: var(--hover-shadow);
     cursor: pointer;
 }
-.footer a{
-    float: right;
+
+.footer a {
     color: var(--main-color);
-    font-weight: bold;
-    margin : 30px 0;
+    font-weight: 600;
     text-decoration: none;
 }
